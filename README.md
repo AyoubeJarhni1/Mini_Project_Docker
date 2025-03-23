@@ -105,27 +105,15 @@ docker-compose up --build
 
 L'option `--build` permet de reconstruire les images si nécessaire avant de lancer les conteneurs.
 
-#### 2.3 Accès aux services
+#### 2.3 Accès à l'interface web
 
-Une fois l'application déployée, on a accéder aux différents services :
+Une fois l'application déployée, on a accéder au partie front end :
 
-##### Accès à l'API
-- URL : `http://localhost:5000`
-- Authentification requise avec les identifiants configurés
-
-![Interface d'authentification de l'API](screenDocker/inter.png)
-*Figure 1 : Écran d'authentification avec username et password*
-
-
-![Résultat de l'API](screenDocker/inter1.png)
-*Figure 2 : Données JSON des étudiants retournées par l'API*
-
-##### Accès à l'interface web
 - URL : `http://localhost:8081`
 - Affiche les données des étudiants stockées dans le fichier JSON
 
 ![Interface web PHP](screenDocker/check.png)
-*Figure 3 : Liste des étudiants affichée par l'interface web PHP*
+*Liste des étudiants affichée par l'interface web PHP*
 
 
 
