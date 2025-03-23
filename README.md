@@ -50,6 +50,14 @@ L'application existante fonctionne actuellement sur un serveur unique et nécess
 ---
 ## Installation et Déploiement
 ### 1. Construire et Tester l'API
+Dockerfile de l'API
+Le Dockerfile de l'API est construit à partir de l'image Python 3.8 et inclut:
+
+ - Installation des dépendances système nécessaires
+ - Configuration d'un volume pour les données persistantes
+ - Exposition du port 5000
+ - Configuration de l'authentification basique
+
 #### Étapes :
 1. Construire l'image Docker :
 
@@ -70,6 +78,10 @@ EXPLICATION :
 Cette commande nous permet de tester l'API , et voilà le résultat est réussi .   
 ---
 ### 2. Déploiement avec Docker Compose
+Ce fichier configure deux services:
+ - API - Le backend Python/Flask
+ - Website - Le frontend PHP
+#### Étapes :
 1. Modifier `index.php` pour configurer l'URL de l'API
 2. Lancer les services avec Docker Compose :
 ```sh
@@ -82,7 +94,13 @@ docker-compose up -d
    - **Interface Web** : `http://localhost:8080`
 
 ---
-### 3. Docker Registry
+### 3. Docker Compose Registry
+docker-compose-registry.yml
+Ce fichier déploie:
+ - Un registre Docker privé pour stocker les images
+ - Une interface web pour visualiser et gérer les images dans le registre
+
+#### Étapes :
 1. Déployer le registre privé avec :
 ![Déployer le registre privé  ](screenDocker/dockerReg.png)
 
@@ -93,9 +111,6 @@ docker-compose up -d
 4. tester la présence de notre image  en registre privé :
  ![tester notre image   ](screenDocker/testReg.png)
 
-
-## Captures d'Écran
-Ajoutez ici des captures d'écran des tests de votre API et interface web.
 
 
 ---
