@@ -33,13 +33,13 @@ L'application existante fonctionne actuellement sur un serveur unique et nécess
 ## Structure du Projet
 ```
 .
-├── backend/
+├── simple_api/
 │   ├── Dockerfile
 │   ├── requirements.txt
 │   ├── student_age.py
 │   ├── student_age.json
 │
-├── frontend/
+├── website/
 │   ├── index.php
 │
 ├── docker-compose.yml
@@ -94,8 +94,9 @@ Ajoutez ici des captures d'écran des tests de votre API et interface web.
 
 ---
 ## Auteurs
-- **Votre Nom**
-- **Email de contact**
+- **Mohammed Reda kadiri**
+- **Ayoub Jarhni**
+- **Zakaria El hajjam**
 
 ---
 ## Licence
