@@ -64,7 +64,12 @@ Le Dockerfile de l'API est construit à partir de l'image Python 3.8 et inclut:
 ![build image from DockerFile](screenDocker/file.png)
 
 Explication ::
-En utilisant cette commande on construit l'image à partir du dockerFile qu'on a crée 
+La commande docker build -t student-api . génère une image Docker appelée student-api en téléchargeant, extrayant et assemblant les différentes couches nécessaires pour son exécution.
+  docker build : Cette commande est utilisée pour créer une image Docker à partir d'un fichier Dockerfile situé dans le répertoire actuel.
+  
+  -t student-api : L'option -t (tag) est utilisée pour donner un nom (tag) à l'image Docker. Ici, l'image créée sera nommée student-api.
+  
+  . : Le point (.) indique que le contexte de construction est le répertoire actuel. Cela signifie que Docker va chercher le Dockerfile et tous les fichiers   nécessaires dans ce répertoire.
 
 2. Lancer le conteneur :
    
@@ -72,10 +77,24 @@ En utilisant cette commande on construit l'image à partir du dockerFile qu'on a
 
 Explication ::: 
 cette commande nous permet d'exécuter un conteneur à partir de notre image construite "student_api"
+docker run : Lance un nouveau conteneur.
+
+-d : Exécute le conteneur en mode détaché (en arrière-plan).
+
+-p 5000:5000 : Mappe le port 5000 du conteneur au port 5000 de la machine hôte pour y accéder depuis le navigateur ou d'autres services.
+
+--name api_container : Donne un nom personnalisé au conteneur.
+
+student_api : Nom de l’image Docker utilisée pour créer le conteneur.
 
 3. Tester l'API :
 
 ![Tester l'API à travers le conteneur  ](screenDocker/testDF.png)
+
+4. Tester l'API dans le browser avec le credentials fournit dans le code "root:root" :
+![Tester l'API à travers le conteneur  ](inter.png)
+![Tester l'API à travers le conteneur  ](inter1.png)
+
 
 EXPLICATION :
 Cette commande nous permet de tester l'API , et voilà le résultat est réussi .   
