@@ -60,7 +60,8 @@ docker build -t student_api ./backend
 
 
 ```
-![build image from DockerFile ](screenDocker\file.png)
+![build image from DockerFile](screenDocker/file.png)
+
 
 Explication ::: 
 
