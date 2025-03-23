@@ -50,6 +50,7 @@ L'application existante fonctionne actuellement sur un serveur unique et nécess
 ---
 ## Installation et Déploiement
 ### 1. Construire et Tester l'API
+
 Dockerfile de l'API
 Le Dockerfile de l'API est construit à partir de l'image Python 3.8 et inclut:
 
@@ -67,9 +68,12 @@ Explication ::
 En utilisant cette commande on construit l'image à partir du dockerFile qu'on a crée 
 
 2. Lancer le conteneur :
+   
 ![lancer le conteneur à partir de l'image ](screenDocker/runImage.PNG)
+
 Explication ::: 
 cette commande nous permet d'exécuter un conteneur à partir de notre image construite "student_api"
+
 3. Tester l'API :
 
 ![Tester l'API à travers le conteneur  ](screenDocker/testDF.png)
@@ -84,11 +88,9 @@ Ce fichier configure deux services:
 #### Étapes :
 1. Modifier `index.php` pour configurer l'URL de l'API
 2. Lancer les services avec Docker Compose :
-```sh
-docker-compose up -d
-```
 
 ![build image from DockerFile ](screenDocker/file.png)
+
 3. Accéder à l'application :
    - **API** : `http://localhost:5000`
    - **Interface Web** : `http://localhost:8080`
