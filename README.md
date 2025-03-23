@@ -64,7 +64,7 @@ Explication :::
 cette commande nous permet d'exécuter un conteneur à partir de notre image construite "student_api"
 3. Tester l'API :
 
-![Tester l'API à travers le conteneur  ](screenDocker/testDf.png)
+![Tester l'API à travers le conteneur  ](screenDocker/testDF.png)
 ---
 ### 2. Déploiement avec Docker Compose
 1. Modifier `index.php` pour configurer l'URL de l'API
