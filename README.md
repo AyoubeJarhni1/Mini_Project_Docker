@@ -56,6 +56,9 @@ L'application existante fonctionne actuellement sur un serveur unique et nécess
 
 
 docker build -t student_api ./backend
+
+
+
 ```
 ![build image from DockerFile ](screenDocker\file.png)
 
