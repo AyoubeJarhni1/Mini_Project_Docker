@@ -84,19 +84,19 @@ docker-compose up -d
 ---
 ### 3. Docker Registry
 1. Déployer le registre privé avec :
-```sh
-docker-compose -f docker-compose-registry.yml up -d
-```
-2. Ajouter le tag et pousser l'image :
-```sh
-docker tag student_api localhost:5000/student_api
+![Déployer le registre privé  ](screenDocker/dockerReg.png)
 
-docker push localhost:5000/student_api
-```
+2. Ajouter le tag
+    ![Ajouter le tag de notre image   ](screenDocker/tag.png)
+3. Pousser l'image crée vers le registre privé :
+ ![Pousser notre image   ](screenDocker/pushRegist.png)
+4. tester la présence de notre image  en registre privé :
+ ![tester notre image   ](screenDocker/testReg.png)
 
----
+
 ## Captures d'Écran
 Ajoutez ici des captures d'écran des tests de votre API et interface web.
+
 
 ---
 ## Auteurs
