@@ -97,23 +97,32 @@ docker-compose up -d
 ### 3. Docker Compose Registry
 docker-compose-registry.yml
 Ce fichier déploie:
- - Un registre Docker privé pour stocker les images
- - Une interface web pour visualiser et gérer les images dans le registre
+ - Un *registre Docker privé* pour stocker les images
+ - Une *interface web* pour visualiser et gérer les images dans le registre
 
 #### Étapes :
 1. Déployer le registre privé avec :
-![Déployer le registre privé  ](screenDocker/dockerReg.png)
-
+   Avant de commencer, il faut lancer le registre Docker privé avec **Docker Compose**. 
+     ![Déployer le registre privé  ](screenDocker/dockerReg.png)
+   
 2. Ajouter le tag
-    ![Ajouter le tag de notre image   ](screenDocker/tag.png)
+    Avant d’envoyer une image vers notre registre privé, nous devons lui attribuer un tag correspondant à l’URL du registre.
+      ![Ajouter le tag de notre image   ](screenDocker/tag.png)
+    **Explication** :
+       -student_api : Nom de l’image Docker créée
+       -localhost:5001/student_api : Tag pour associer l’image à notre registre privé
+   
 3. Pousser l'image crée vers le registre privé :
- ![Pousser notre image   ](screenDocker/pushRegist.png)
+    Maintenant que l’image a un tag, nous pouvons l’envoyer vers notre registre privé.
+     ![Pousser notre image   ](screenDocker/pushRegist.png)
+
 4. tester la présence de notre image  en registre privé :
- ![tester notre image   ](screenDocker/testReg.png)
+    Une fois l’image poussée, nous pouvons vérifier qu’elle est bien stockée dans le registre privé avec :
+      ![tester notre image   ](screenDocker/testReg.png)
 
+ ## Conclusion
+Grâce à ces étapes, vous avez maintenant un registre Docker privé opérationnel où vous pouvez stocker et gérer vos images localement. Vous pouvez également utiliser l'interface web associée pour naviguer plus facilement parmi les images disponibles.
 
-
----
 ## Auteurs
 - **Mohammed Reda kadiri**
 - **Ayoub Jarhni**
