@@ -22,7 +22,11 @@ RUN mkdir -p /data
 # déclarer le dossier comme volume
 VOLUME ["/data"]
 
+#Variable environment 
+ENV student_age_file=/data/student_age.json
+
 #Port 
 EXPOSE 5000
+
 # Commande de démarrage
 CMD ["python3", "/student_age.py"]
