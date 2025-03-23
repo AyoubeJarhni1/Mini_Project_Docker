@@ -110,32 +110,7 @@ Cela permet au conteneur d’accéder aux données du fichier sans avoir besoin 
 ![Tester l'API à travers le conteneur  ](screenDocker/inter.png)
 ![Tester l'API à travers le conteneur  ](screenDocker/inter1.png)
 
-**EXPLICATION** :  
-  Après avoir testé sur le port, on remarque que le résultat contenu sur "student_age.json" . 
 
-### 2. Déploiement avec Docker Compose  
-Ce fichier configure deux services:
- - API - Le backend Python/Flask
- - Website - Le frontend PHP
-#### Étapes :
-1. Modifier `index.php` pour configurer l'URL de l'API ou bien on peut modifier juste le nom du service en "supmit_api" dans docker-compose 
-2. Lancer les services avec Docker Compose :
-
-![build image from DockerFile ](screenDocker/file.png)
-
-Explication:  
-docker-compose: Outil pour orchestrer plusieurs conteneurs  
-up: Crée et démarre les conteneurs définis dans docker-compose.yml  
--d: Mode détaché (background) - les conteneurs continuent de fonctionner même si vous fermez le terminal  
-
-3. **Accéder à l'application** :  
-   
-   - **API** : `http://localhost:5000` 
-   - **Interface Web** : `http://localhost:8081`  
-
-     ![Tester l'API à travers le conteneur  ](screenDocker/check.png)
-
----
 ### 3. Docker Compose Registry
 
 docker-compose-registry.yml
