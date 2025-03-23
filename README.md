@@ -77,16 +77,21 @@ docker build : Cette commande est utilisée pour créer une image Docker à part
 ![lancer le conteneur à partir de l'image ](screenDocker/runImage.PNG)
 
 Explication ::: 
-cette commande nous permet d'exécuter un conteneur à partir de notre image construite "student_api"
-docker run : Lance un nouveau conteneur.
+cette commande nous permet d'exécuter un conteneur à partir de notre image construite "student_api".
 
--d : Exécute le conteneur en mode détaché (en arrière-plan).
+docker run : Cette commande exécute un conteneur Docker à partir d'une image.
 
--p 5000:5000 : Mappe le port 5000 du conteneur au port 5000 de la machine hôte pour y accéder depuis le navigateur ou d'autres services.
+-p 5000:5000 : Cette option mappe le port 5000 du conteneur au port 5000 de l'hôte. Cela signifie que l'application à l'intérieur du conteneur sera accessible via http://localhost:5000 ou http://172.17.0.2:5000 (adresse interne du conteneur).
 
---name api_container : Donne un nom personnalisé au conteneur.
+-v C:\Users\ayoub\student_list\student_list\simple_api\student_age.json:/data/student_age.json :
 
-student_api : Nom de l’image Docker utilisée pour créer le conteneur.
+Cette option monte un volume (liaison entre un fichier de l’hôte et un fichier du conteneur).
+
+Le fichier student_age.json situé sur l’hôte (Windows) est monté à l’emplacement /data/student_age.json à l’intérieur du conteneur.
+
+Cela permet au conteneur d’accéder aux données du fichier sans avoir besoin de l'inclure dans l'image Docker.
+
+student-api : C'est le nom de l'image Docker à partir de laquelle le conteneur est créé et exécuté
 
 3. Tester l'API :
 
