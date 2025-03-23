@@ -59,11 +59,11 @@ Le Dockerfile de l'API est construit à partir de l'image Python 3.8 et inclut:
  - Configuration de l'authentification basique
 
 #### Étapes :
-1. Construire l'image Docker :
+1. **Construire l'image Docker** :
 
 ![build image from DockerFile](screenDocker/file.png)
 
-Explication ::
+Explication ::  
 La commande docker build -t student-api . génère une image Docker appelée student-api en téléchargeant, extrayant et assemblant les différentes couches nécessaires pour son exécution.
 
 docker build : Cette commande est utilisée pour créer une image Docker à partir d'un fichier Dockerfile situé dans le répertoire actuel.
@@ -72,7 +72,7 @@ docker build : Cette commande est utilisée pour créer une image Docker à part
   
   . : Le point (.) indique que le contexte de construction est le répertoire actuel. Cela signifie que Docker va chercher le Dockerfile et tous les fichiers   nécessaires dans ce répertoire.
 
-2. Lancer le conteneur :
+2. **Lancer le conteneur** :
    
 ![lancer le conteneur à partir de l'image ](screenDocker/runImage.PNG)
 
@@ -93,19 +93,19 @@ Cela permet au conteneur d’accéder aux données du fichier sans avoir besoin 
 
 student-api : C'est le nom de l'image Docker à partir de laquelle le conteneur est créé et exécuté
 
-3. Tester l'API :
+3. **Tester l'API** :
 
 ![Tester l'API à travers le conteneur  ](screenDocker/testDF.png)
 
-4. Tester l'API dans le browser avec le credentials fournit dans le code "root:root" :
+4. **Tester l'API dans le browser avec le credentials fournit dans le code "root:root"** :
    
 ![Tester l'API à travers le conteneur  ](screenDocker/inter.png)
 ![Tester l'API à travers le conteneur  ](screenDocker/inter1.png)
 
-**EXPLICATION** :
+**EXPLICATION** :  
   Après avoir testé sur le port, on remarque que le résultat contenu sur "student_age.json" . 
 
-### 2. Déploiement avec Docker Compose
+### 2. Déploiement avec Docker Compose  
 Ce fichier configure deux services:
  - API - Le backend Python/Flask
  - Website - Le frontend PHP
