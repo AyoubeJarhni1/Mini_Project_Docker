@@ -98,8 +98,8 @@ student-api : C'est le nom de l'image Docker à partir de laquelle le conteneur 
 ![Tester l'API à travers le conteneur  ](screenDocker/testDF.png)
 
 4. Tester l'API dans le browser avec le credentials fournit dans le code "root:root" :
-![Tester l'API à travers le conteneur  ](inter.png)
-![Tester l'API à travers le conteneur  ](inter1.png)
+![Tester l'API à travers le conteneur  ](screenDocker/inter.png)
+![Tester l'API à travers le conteneur  ](screenDocker/inter1.png)
 
 
 EXPLICATION :
