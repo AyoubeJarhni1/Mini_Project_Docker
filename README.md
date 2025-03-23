@@ -158,7 +158,6 @@ L'option `--build` permet de reconstruire les images si nécessaire avant de lan
       - Affiche les données des étudiants stockées dans le fichier JSON
 
      ![Tester l'API à travers le conteneur  ](screenDocker/check.png)
-     *Liste des étudiants affichée par l'interface web PHP*
 
 ---
 
