@@ -72,6 +72,10 @@ La commande ***docker build -t student-api*** . génère une image Docker appel�
   
   **.** : Le point (.) indique que le contexte de construction est le répertoire actuel. Cela signifie que Docker va chercher le Dockerfile et tous les fichiers   nécessaires dans ce répertoire.
 
+![build image from DockerFile](screenDocker/imageHub.png)
+
+  
+
 2. **Lancer le conteneur** :
    
 ![lancer le conteneur à partir de l'image ](screenDocker/runImage.PNG)
@@ -79,19 +83,17 @@ La commande ***docker build -t student-api*** . génère une image Docker appel�
 Explication ::: 
 cette commande nous permet d'exécuter un conteneur à partir de notre image construite "student_api".
 
-docker run : Cette commande exécute un conteneur Docker à partir d'une image.
+**docker run** : Cette commande exécute un conteneur Docker à partir d'une image.
 
--p 5000:5000 : Cette option mappe le port 5000 du conteneur au port 5000 de l'hôte. Cela signifie que l'application à l'intérieur du conteneur sera accessible via http://localhost:5000 ou http://172.17.0.2:5000 (adresse interne du conteneur).
+**-p 5000:5000** : Cette option mappe le port 5000 du conteneur au port 5000 de l'hôte. Cela signifie que l'application à l'intérieur du conteneur sera accessible via http://localhost:5000 ou http://172.17.0.2:5000 (adresse interne du conteneur).
 
--v C:\Users\ayoub\student_list\student_list\simple_api\student_age.json:/data/student_age.json :
+**-v C:\Users\ayoub\student_list\student_list\simple_api\student_age.json:/data/student_age.json** : Cette option monte un volume (liaison entre un fichier de l’hôte et un fichier du conteneur).
 
-Cette option monte un volume (liaison entre un fichier de l’hôte et un fichier du conteneur).
-
-Le fichier student_age.json situé sur l’hôte (Windows) est monté à l’emplacement /data/student_age.json à l’intérieur du conteneur.
+Le fichier ***student_age.json*** situé sur l’hôte (Windows) est monté à l’emplacement /data/student_age.json à l’intérieur du conteneur.
 
 Cela permet au conteneur d’accéder aux données du fichier sans avoir besoin de l'inclure dans l'image Docker.
 
-student-api : C'est le nom de l'image Docker à partir de laquelle le conteneur est créé et exécuté
+***student-api*** : C'est le nom de l'image Docker à partir de laquelle le conteneur est créé et exécuté
 
 3. **Tester l'API** :
 
