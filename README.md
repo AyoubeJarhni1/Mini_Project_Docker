@@ -111,17 +111,17 @@ Cela permet au conteneur d’accéder aux données du fichier sans avoir besoin 
 ![Tester l'API à travers le conteneur  ](screenDocker/inter1.png)
 **EXPLICATION** :  
   Après avoir testé sur le port, on remarque que le résultat contenu sur "student_age.json" . 
+### 2. Déploiement avec Docker Compose
 
-### 2. Déploiement avec Docker Compose  
-
-  Docker Compose est un outil puissant qui permet de définir et de gérer des applications multi-conteneurs Docker à l'aide d'un fichier YAML (`docker-compose.yml`). Cette solution :
+Docker Compose est un outil puissant qui permet de définir et de gérer des applications multi-conteneurs Docker à l'aide d'un fichier YAML (`docker-compose.yml`). Cette solution :
 
 - Simplifie considérablement le déploiement d'applications complexes
 - Automatise la création, la configuration et l'orchestration des conteneurs
 - Facilite le développement et les tests dans des environnements reproduisibles
 - Permet de définir l'ensemble de l'infrastructure comme du code
 
-  #### 2.1 Description des services
+
+#### 2.1 Description des services
 
 ##### Service API (supmit_api)
 - Basé sur l'image personnalisée `student-api`
@@ -141,25 +141,22 @@ Cela permet au conteneur d’accéder aux données du fichier sans avoir besoin 
 
 Pour démarrer l'ensemble de l'infrastructure, on a utiliser la commande suivante à la racine du projet :
 
-![build image from DockerFile ](screenDocker/file.png)
-
-Explication:  
-docker-compose: Outil pour orchestrer plusieurs conteneurs  
-up: Crée et démarre les conteneurs définis dans docker-compose.yml  
--d: Mode détaché (background) - les conteneurs continuent de fonctionner même si vous fermez le terminal  
+```bash
+docker-compose up --build
+```
 
 L'option `--build` permet de reconstruire les images si nécessaire avant de lancer les conteneurs.
 
+#### 2.3 Accès à l'interface web
 
-3. **Accéder à l'application** :  
-   
-   - **API** : `http://localhost:5000` 
-   - **Interface Web** : `http://localhost:8081`
-      - Affiche les données des étudiants stockées dans le fichier JSON
+Une fois l'application déployée, on a accéder au partie front end :
 
-     ![Tester l'API à travers le conteneur  ](screenDocker/check.png)
+- URL : `http://localhost:8081`
+- Affiche les données des étudiants stockées dans le fichier JSON
 
----
+![Interface web PHP](screenDocker/check.png)
+*Liste des étudiants affichée par l'interface web PHP*
+
 
 ### 3. Docker Compose Registry
 
