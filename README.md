@@ -54,6 +54,9 @@ L'application existante fonctionne actuellement sur un serveur unique et nécess
 1. Construire l'image Docker :
 ```sh
 docker build -t student_api ./backend
+
+
+
 ```
 2. Lancer le conteneur :
 ```sh
