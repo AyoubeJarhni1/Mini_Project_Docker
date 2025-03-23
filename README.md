@@ -70,22 +70,73 @@ EXPLICATION :
 Cette commande nous permet de tester l'API , et voilà le résultat est réussi .   
 ---
 ### 2. Déploiement avec Docker Compose
-1. Modifier `index.php` pour configurer l'URL de l'API
-2. Lancer les services avec Docker Compose :
-```sh
-docker-compose up -d
+
+Docker Compose est un outil puissant qui permet de définir et de gérer des applications multi-conteneurs Docker à l'aide d'un fichier YAML (`docker-compose.yml`). Cette solution :
+
+- Simplifie considérablement le déploiement d'applications complexes
+- Automatise la création, la configuration et l'orchestration des conteneurs
+- Facilite le développement et les tests dans des environnements reproduisibles
+- Permet de définir l'ensemble de l'infrastructure comme du code
+
+
+#### 2.1 Description des services
+
+##### Service API (supmit_api)
+- Basé sur l'image personnalisée `student-api`
+- Expose le port 5000 pour les requêtes API
+- Monte un volume local contenant le fichier `student_age.json` pour la persistance des données
+- S'exécute dans le réseau `mynetwork`
+
+##### Service Web (website)
+- Utilise l'image officielle `php:apache` pour héberger un site web
+- Variables d'environnement prédéfinies (`USERNAME` et `PASSWORD`) pour l'authentification
+- Dépend du service API (s'assure que l'API démarre d'abord)
+- Expose le site sur le port 8081
+- Monte les fichiers du projet via un volume local
+- Partage le même réseau que l'API pour permettre la communication inter-services
+
+#### 2.2 Lancement des conteneurs
+
+Pour démarrer l'ensemble de l'infrastructure, on a utiliser la commande suivante à la racine du projet :
+
+```bash
+docker-compose up --build
 ```
 
-![build image from DockerFile ](screenDocker/file.png)
-3. Accéder à l'application :
-   - **API** : `http://localhost:5000`
-   - **Interface Web** : `http://localhost:8080`
+L'option `--build` permet de reconstruire les images si nécessaire avant de lancer les conteneurs.
 
----
+#### 2.3 Accès aux services
+
+Une fois l'application déployée, on a accéder aux différents services :
+
+##### Accès à l'API
+- URL : `http://localhost:5000`
+- Authentification requise avec les identifiants configurés
+
+![Interface d'authentification de l'API](screenDocker/inter.png)
+*Figure 1 : Écran d'authentification avec username et password*
+
+
+![Résultat de l'API](screenDocker/inter1.png)
+*Figure 2 : Données JSON des étudiants retournées par l'API*
+
+##### Accès à l'interface web
+- URL : `http://localhost:8081`
+- Affiche les données des étudiants stockées dans le fichier JSON
+
+![Interface web PHP](screenDocker/check.png)
+*Figure 3 : Liste des étudiants affichée par l'interface web PHP*
+
+
+
+
+
+
+
 ### 3. Docker Registry
 1. Déployer le registre privé avec :
 ```sh
-docker-compose -f docker-compose-registry.yml up -d
+docker-compose -f docker-compose-registry.yml up 
 ```
 2. Ajouter le tag et pousser l'image :
 ```sh
