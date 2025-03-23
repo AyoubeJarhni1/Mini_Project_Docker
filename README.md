@@ -52,31 +52,19 @@ L'application existante fonctionne actuellement sur un serveur unique et nécess
 ### 1. Construire et Tester l'API
 #### Étapes :
 1. Construire l'image Docker :
-```sh
 
-
-docker build -t student_api ./backend
-
-
-
-```
 ![build image from DockerFile](screenDocker/file.png)
 
-
-Explication ::: 
-
+Explication ::
+En utilisant cette commande on construit l'image à partir du dockerFile qu'on a crée 
 
 2. Lancer le conteneur :
-```sh
-docker run -d -p 5000:5000 -v $(pwd)/backend/student_age.json:/data/student_age.json student_api
-```
+![lancer le conteneur à partir de l'image ](screenDocker/runImage.PNG)
 Explication ::: 
-
+cette commande nous permet d'exécuter un conteneur à partir de notre image construite "student_api"
 3. Tester l'API :
-```sh
-curl -X GET http://localhost:5000/SUPMIT/api/v1.0/get_student_ages
-```
-![build image from DockerFile ](screenDocker\file.png)
+
+![Tester l'API à travers le conteneur  ](screenDocker/testDf.png)
 ---
 ### 2. Déploiement avec Docker Compose
 1. Modifier `index.php` pour configurer l'URL de l'API
