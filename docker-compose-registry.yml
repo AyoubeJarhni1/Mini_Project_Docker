@@ -1,0 +1,21 @@
+
+services:
+  registry:
+    image: registry:2
+    container_name: registry
+    restart: always
+    ports:
+      - "5000:5000"  
+    volumes:
+      - registry_data:/var/lib/registry 
+  registry-ui:
+    image: joxit/docker-registry-ui
+    container_name: registry-ui
+    restart: always
+    ports:
+      - "8081:80"  
+    environment:
+      - REGISTRY_URL=http://registry:5000 
+volumes:
+  registry_data:
+    driver: local
