@@ -64,13 +64,13 @@ Le Dockerfile de l'API est construit à partir de l'image Python 3.8 et inclut:
 ![build image from DockerFile](screenDocker/file.png)
 
 Explication ::  
-La commande docker build -t student-api . génère une image Docker appelée student-api en téléchargeant, extrayant et assemblant les différentes couches nécessaires pour son exécution.
+La commande ***docker build -t student-api*** . génère une image Docker appelée student-api en téléchargeant, extrayant et assemblant les différentes couches nécessaires pour son exécution.
 
-docker build : Cette commande est utilisée pour créer une image Docker à partir d'un fichier Dockerfile situé dans le répertoire actuel.
+  **docker build** : Cette commande est utilisée pour créer une image Docker à partir d'un fichier Dockerfile situé dans le répertoire actuel.
   
-  -t student-api : L'option -t (tag) est utilisée pour donner un nom (tag) à l'image Docker. Ici, l'image créée sera nommée student-api.
+  **-t student-api** : L'option -t (tag) est utilisée pour donner un nom (tag) à l'image Docker. Ici, l'image créée sera nommée student-api.
   
-  . : Le point (.) indique que le contexte de construction est le répertoire actuel. Cela signifie que Docker va chercher le Dockerfile et tous les fichiers   nécessaires dans ce répertoire.
+  **.** : Le point (.) indique que le contexte de construction est le répertoire actuel. Cela signifie que Docker va chercher le Dockerfile et tous les fichiers   nécessaires dans ce répertoire.
 
 2. **Lancer le conteneur** :
    
@@ -120,9 +120,10 @@ docker-compose: Outil pour orchestrer plusieurs conteneurs
 up: Crée et démarre les conteneurs définis dans docker-compose.yml  
 -d: Mode détaché (background) - les conteneurs continuent de fonctionner même si vous fermez le terminal  
 
-3. Accéder à l'application :
-   - **API** : `http://localhost:5000`
-   - **Interface Web** : `http://localhost:8080`
+3. **Accéder à l'application** :  
+   
+   - **API** : `http://localhost:5000` 
+   - **Interface Web** : `http://localhost:8081`  
 
      ![Tester l'API à travers le conteneur  ](screenDocker/check.png)
 
