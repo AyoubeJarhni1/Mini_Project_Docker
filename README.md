@@ -72,6 +72,8 @@ La commande ***docker build -t student-api*** . génère une image Docker appel�
   
   **.** : Le point (.) indique que le contexte de construction est le répertoire actuel. Cela signifie que Docker va chercher le Dockerfile et tous les fichiers   nécessaires dans ce répertoire.
 
+  ***Voilà le résultat sur Docker Desktop:***
+
 ![build image from DockerFile](screenDocker/imageHub.png)
 
   
@@ -94,6 +96,10 @@ Le fichier ***student_age.json*** situé sur l’hôte (Windows) est monté à l
 Cela permet au conteneur d’accéder aux données du fichier sans avoir besoin de l'inclure dans l'image Docker.
 
 ***student-api*** : C'est le nom de l'image Docker à partir de laquelle le conteneur est créé et exécuté
+
+  ***Voilà le résultat sur Docker Desktop:***
+
+    ![build image from DockerFile](screenDocker/containerHub.png)
 
 3. **Tester l'API** :
 
