@@ -65,7 +65,8 @@ Le Dockerfile de l'API est construit à partir de l'image Python 3.8 et inclut:
 
 Explication ::
 La commande docker build -t student-api . génère une image Docker appelée student-api en téléchargeant, extrayant et assemblant les différentes couches nécessaires pour son exécution.
-  docker build : Cette commande est utilisée pour créer une image Docker à partir d'un fichier Dockerfile situé dans le répertoire actuel.
+
+docker build : Cette commande est utilisée pour créer une image Docker à partir d'un fichier Dockerfile situé dans le répertoire actuel.
   
   -t student-api : L'option -t (tag) est utilisée pour donner un nom (tag) à l'image Docker. Ici, l'image créée sera nommée student-api.
   
