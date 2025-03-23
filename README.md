@@ -99,7 +99,7 @@ Cela permet au conteneur d’accéder aux données du fichier sans avoir besoin 
 
   ***Voilà le résultat sur Docker Desktop:***
 
-    ![build image from DockerFile](screenDocker/containerHub.png)
+    ![test image from DockerFile](screenDocker/containerHub.png)
 
 3. **Tester l'API** :
 
