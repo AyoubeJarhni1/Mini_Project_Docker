@@ -50,8 +50,7 @@ L'application existante fonctionne actuellement sur un serveur unique et nécess
 ---
 ## Installation et Déploiement
 ### 1. Construire et Tester l'API
-
-Dockerfile de l'API   
+ 
 Le Dockerfile de l'API est construit à partir de l'image Python 3.8 et inclut:
 
  - Installation des dépendances système nécessaires
